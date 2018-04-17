@@ -2,10 +2,10 @@ defmodule FlockingWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", FlockingWeb.RoomChannel
+  channel("boids", FlockingWeb.BoidsChannel)
 
   ## Transports
-  transport :websocket, Phoenix.Transports.WebSocket
+  transport(:websocket, Phoenix.Transports.WebSocket)
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can
@@ -30,7 +30,7 @@ defmodule FlockingWeb.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     FlockingWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     FlockWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

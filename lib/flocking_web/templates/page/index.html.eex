@@ -1,36 +1,38 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<div class="row">
+  <div class="col-xs-12">
+    <canvas id="canvas" height="500" width="500"></canvas>
+  </div>
 </div>
+<div class="row">
+  <div class="col-sm-4">
+    <label>
+      Cohesion
+      <input data-setting="cohesion_weight" type="range" value="1", min="0" max="5" step="0.5" />
+    </label>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+    <label>
+      Separation
+      <input data-setting="separation_weight" type="range" value="1", min="0" max="5" step="0.5" />
+    </label>
+
+    <label>
+      Alignment
+      <input data-setting="alignment_weight" type="range" value="1", min="0" max="5" step="0.5" />
+    </label>
   </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+  <div class="col-sm-4">
+  </div>
+
+  <div class="col-sm-4">
+    <label>
+      Num Boids
+      <input data-setting="boids" type="range" value="100", min="0" max="200" step="5" />
+    </label>
+
+    <label>
+      FPS
+      <input data-setting="fps" type="range" value="30", min="1" max="60" step="1" />
+    </label>
   </div>
 </div>
