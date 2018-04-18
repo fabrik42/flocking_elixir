@@ -101,28 +101,36 @@ defmodule Flocking.Simulation do
   end
 
   def wrap_position(boid = %{position: position}, %{dimensions: dimensions}) do
-    min_x_value = -boid.size
-    min_y_value = -boid.size
-    max_x_value = dimensions.width + boid.size
-    max_y_value = dimensions.width + boid.size
+    min_x_value = -boid.size / 2
+    min_y_value = -boid.size / 2
+    max_x_value = dimensions.width + boid.size / 2
+    max_y_value = dimensions.width + boid.size / 2
 
-    new_position =
+    new_x =
       cond do
-        position.x < min_x_value ->
-          %{position | x: max_x_value}
+      position.x < min_x_value ->
+        max_x_value
 
-        position.y < min_y_value ->
-          %{position | y: max_y_value}
+      position.x > max_x_value ->
+        min_x_value
 
-        position.x > max_x_value ->
-          %{position | x: min_x_value}
+      true ->
+        position.x
+    end
 
-        position.y > max_y_value ->
-          %{position | y: min_y_value}
+    new_y =
+      cond do
+      position.y < min_y_value ->
+        max_y_value
 
-        true ->
-          position
-      end
+      position.y > max_y_value ->
+        min_y_value
+
+      true ->
+        position.y
+    end
+
+    new_position = Vector.new(new_x, new_y)
 
     %{boid | position: new_position}
   end

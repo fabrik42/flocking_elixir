@@ -19,8 +19,4 @@ defmodule FlockingWeb.BoidsChannel do
 
     {:noreply, socket}
   end
-
-  # place_obstacle
-  # place_predator
-  # place_decoy
 end

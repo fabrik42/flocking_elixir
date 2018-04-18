@@ -1,14 +1,13 @@
 defmodule Flocking.WorldStateUpdater do
+  use GenServer
+  require Logger
   alias Flocking.Boid
   alias Flocking.Simulation
   alias Flocking.WorldState
   alias FlockingWeb.Endpoint
 
-  use GenServer
-  require Logger
-
   def start_link() do
-    state = WorldState.new(100)
+    state = WorldState.new(150)
     GenServer.start_link(__MODULE__, state, name: __MODULE__)
   end
 

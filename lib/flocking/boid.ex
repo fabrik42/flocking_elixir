@@ -29,13 +29,13 @@ defmodule Flocking.Boid do
   def build_default(x, y) do
     %__MODULE__{
       acceleration: Vector.zero(),
-      velocity: Vector.new(:rand.uniform() * 4, :rand.uniform() * 4),
+      velocity: Vector.new(:rand.uniform() * 2 - 1, :rand.uniform() * 2 - 1),
       position: Vector.new(x, y),
       perception_radius: 40,
       personal_space_radius: 20,
       obstacle_avoidance_radius: 60,
-      max_speed: 6,
-      max_agility: 0.1,
+      max_speed: 2,
+      max_agility: 0.2,
       size: 20,
       color: %{
         r: :rand.uniform(255),

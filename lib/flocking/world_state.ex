@@ -1,21 +1,18 @@
 defmodule Flocking.WorldState do
   alias Flocking.Boid
 
-  @enforce_keys [:boids, :dimensions]
+  @enforce_keys [:boids, :dimensions, :settings]
   defstruct [
-    :dimensions,
     :boids,
-    :settings,
-    :obstacles,
-    :predators,
-    :lures
+    :dimensions,
+    :settings
   ]
 
   def new(num_boids) do
-    dimensions = %{width: 500, height: 500}
+    dimensions = %{width: 700, height: 700}
 
     boids =
-      Enum.map(0..num_boids, fn _ ->
+      Enum.map(1..num_boids, fn _ ->
         Boid.with_random_position(dimensions.width, dimensions.height)
       end)
 
