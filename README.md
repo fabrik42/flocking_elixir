@@ -1,5 +1,9 @@
 # Flocking
 
+A simple and hacky implementation of a flocking simulation, using Phoenix channels and a GenServer.
+
+![](https://media.giphy.com/media/etBfv2DtLpUw3XtJb7/giphy.gif)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
